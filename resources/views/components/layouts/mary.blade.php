@@ -55,6 +55,7 @@
  
                 <x-mary-menu-item title="Hello" icon="o-sparkles" link="/" />
                 <x-mary-menu-item title="Categories" icon="o-sparkles" link="/dashboard/categories" />
+                <x-mary-menu-item title="Tags" icon="o-tag" link="/dashboard/tags" />
                 <x-mary-menu-sub title="Settings" icon="o-cog-6-tooth">
                     <x-mary-menu-item title="Wifi" icon="o-wifi" link="####" />
                     <x-mary-menu-item title="Archives" icon="o-archive-box" link="####" />
