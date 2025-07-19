@@ -19,6 +19,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
 
     Route::get('dashboard/categories', \App\Livewire\Categories\Index::class)->name('dashboard.categories');
+    Route::get('dashboard/tags', \App\Livewire\Tags\Index::class)->name('dashboard.tags');
 });
 
 require __DIR__ . '/auth.php';
