@@ -17,6 +17,7 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
+        "larastan/larastan": "^3.6",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.18",
         "laravel/sail": "^1.41",
@@ -61,7 +62,15 @@
             "@php artisan config:clear --ansi",
             "@php artisan test"
         ],
-        "format": "./vendor/bin/pint"
+        "format": "./vendor/bin/pint",
+        "analyse": "./vendor/bin/phpstan analyse --memory-limit=1G",
+        "pest": "./vendor/bin/pest --parallel",
+        "ci": [
+            "Composer\\Config::disableProcessTimeout",
+            "./vendor/bin/pint --test",
+            "./vendor/bin/phpstan analyse --memory-limit=1G",
+            "./vendor/bin/pest --parallel"
+        ]
     },
     "extra": {
         "laravel": {
