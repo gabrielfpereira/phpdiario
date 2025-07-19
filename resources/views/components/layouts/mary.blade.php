@@ -54,6 +54,7 @@
                 @endif
  
                 <x-mary-menu-item title="Hello" icon="o-sparkles" link="/" />
+                <x-mary-menu-item title="Categories" icon="o-sparkles" link="/dashboard/categories" />
                 <x-mary-menu-sub title="Settings" icon="o-cog-6-tooth">
                     <x-mary-menu-item title="Wifi" icon="o-wifi" link="####" />
                     <x-mary-menu-item title="Archives" icon="o-archive-box" link="####" />
@@ -63,7 +64,9 @@
  
         {{-- The `$slot` goes here --}}
         <x-slot:content>
-            {{ $slot }}
+            <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl bg-base-100 p-4">
+                {{ $slot }}
+            </div>
         </x-slot:content>
     </x-mary-main>
  
