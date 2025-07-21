@@ -13,7 +13,14 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
+        {{-- Make sure you have this  --}}
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        
+    
+       {{-- TinyMCE --}}
+        <script src="https://cdn.tiny.cloud/1/cchvwicb0wpxgrq8egq7vf6qfveq4of528ue4wu6qz1zre3a/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <x-header.tinycme />
     </head>
     <body class="min-h-screen font-sans antialiased bg-base-200">
  
@@ -56,9 +63,9 @@
                 <x-mary-menu-item title="Hello" icon="o-sparkles" link="/" />
                 <x-mary-menu-item title="Categories" icon="o-sparkles" link="/dashboard/categories" />
                 <x-mary-menu-item title="Tags" icon="o-tag" link="/dashboard/tags" />
-                <x-mary-menu-sub title="Settings" icon="o-cog-6-tooth">
-                    <x-mary-menu-item title="Wifi" icon="o-wifi" link="####" />
-                    <x-mary-menu-item title="Archives" icon="o-archive-box" link="####" />
+                <x-mary-menu-sub title="Articles" icon="o-newspaper">
+                    <x-mary-menu-item title="All Articles" icon="o-newspaper" link="/dashboard/articles" />
+                    <x-mary-menu-item title="Create Article" icon="o-plus" link="/dashboard/articles/create" />
                 </x-mary-menu-sub>
             </x-mary-menu>
         </x-slot:sidebar>
